@@ -50,7 +50,8 @@ export class App {
 
     /** 3D-сцена создаётся после шаблона, чтобы контейнер canvas уже существовал */
     this.character = new CharacterScene(this.view.el.stageCanvas, {
-      modelUrl: '/assets/characters/character.glb',
+      // Учитываем базовый URL для GitHub Pages (Vite base: "/randomize/")
+      modelUrl: `${import.meta.env.BASE_URL}assets/characters/character.glb`,
       animationNames: {
         idle: 'Idle',
         think: 'Think',
